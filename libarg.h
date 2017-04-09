@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-#define T_ARG0 void (*)()
-#define T_ARG1 void (*)(char*)
+# define T_ARG0 void (*)()
+# define T_ARG1 void (*)(char*)
 
 typedef struct	s_arg
 {

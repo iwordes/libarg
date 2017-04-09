@@ -64,7 +64,7 @@ static void		short_(int *argc, char ***argv, t_arg *args)
 		{
 			ARGC -= 1;
 			((T_ARG1)arg->fn)(*(ARGV += 1));
-			break;
+			break ;
 		}
 	}
 }
@@ -93,7 +93,7 @@ void			arg_parse(int *argc, char ***argv, t_arg *args)
 		if (ARG[1] != '-')
 			short_(argc, argv, args);
 		else if (ARG[2] == 0)
-			break;
+			break ;
 		else
 			long_(argc, argv, args);
 		ARGC--;
