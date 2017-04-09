@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 10:35:27 by iwordes           #+#    #+#             */
-/*   Updated: 2017/04/08 17:05:25 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/04/08 18:00:17 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #define ARGV (*argv)
 #define ARG (**argv)
 
-
-#include <libft.h>
 static bool		strequ_(const char *s1, const char *s2)
 {
 	while (*s1 && *s1 == *s2)

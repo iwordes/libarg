@@ -15,5 +15,5 @@ fclean: clean
 re: fclean all
 
 $(NAME): libarg.c libarg.h
-	gcc -Wall -Wextra -Werror -c  -I /nfs/2016/i/iwordes/proj/libft/include                                       libarg.c
+	gcc -Wall -Wextra -Werror -c libarg.c
 	libtool -static -o $@ libarg.o
