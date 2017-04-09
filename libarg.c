@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 10:35:27 by iwordes           #+#    #+#             */
-/*   Updated: 2017/04/08 15:48:16 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/04/08 17:05:25 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #define ARGV (*argv)
 #define ARG (**argv)
 
+
+#include <libft.h>
 static bool		strequ_(const char *s1, const char *s2)
 {
 	while (*s1 && *s1 == *s2)
@@ -23,7 +25,7 @@ static bool		strequ_(const char *s1, const char *s2)
 		s1 += 1;
 		s2 += 1;
 	}
-	return (*s2 - *s1);
+	return (*s2 == *s1);
 }
 
 static t_arg	*arg_(char *arg, t_arg *args)
@@ -50,7 +52,7 @@ static void		short_(int *argc, char ***argv, t_arg *args)
 	t_arg	*arg;
 	int		i;
 
-	i = 0;
+	i = 1;
 	buff[1] = 0;
 	while ((*ARGV)[i])
 	{
@@ -63,7 +65,7 @@ static void		short_(int *argc, char ***argv, t_arg *args)
 		else
 		{
 			ARGC -= 1;
-			((T_ARG0)arg->fn)(ARGV += 1);
+			((T_ARG1)arg->fn)(*(ARGV += 1));
 			break;
 		}
 	}
@@ -86,7 +88,9 @@ static void		long_(int *argc, char ***argv, t_arg *args)
 
 void			arg_parse(int *argc, char ***argv, t_arg *args)
 {
-	while (ARGC != 0 && *ARGV[0] == '-')
+	ARGC -= 1;
+	ARGV += 1;
+	while (ARGC != 0 && (*ARGV)[0] == '-')
 	{
 		if (ARG[1] != '-')
 			short_(argc, argv, args);
