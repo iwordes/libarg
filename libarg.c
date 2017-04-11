@@ -30,8 +30,7 @@ static t_arg	*arg_(char *arg, t_arg *args)
 {
 	if (!arg || !args)
 	{
-		// TODO: Usage
-		write(1, "\e[91mNO\e[0m\n", 12);
+		write(1, USAGE, sizeof(USAGE) - 1);
 		exit(2);
 	}
 	while (args->name)
