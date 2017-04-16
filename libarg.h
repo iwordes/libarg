@@ -20,6 +20,10 @@
 # define T_ARG0 void (*)()
 # define T_ARG1 void (*)(char*)
 
+/*
+** # define USAGE ""
+*/
+
 typedef struct	s_arg
 {
 	char		*name;
